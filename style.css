@@ -16,6 +16,81 @@ body {
   scroll-behavior: smooth;
 }
 
+.gallery {
+  max-width: 700px;
+  margin: 40px auto;
+  position: relative;
+}
+
+.carousel {
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slide {
+  min-width: 100%;
+  user-select: none;
+}
+
+.carousel-slide img {
+  width: 100%;
+  display: block;
+  border-radius: 15px;
+}
+
+.carousel-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: var(--secondary);
+  border: none;
+  color: white;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 50%;
+  z-index: 10;
+  transition: background 0.3s ease;
+}
+
+.carousel-button:hover {
+  background: var(--accent);
+  color: var(--text);
+}
+
+.carousel-button.prev {
+  left: 15px;
+}
+
+.carousel-button.next {
+  right: 15px;
+}
+
+.carousel-dots {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.carousel-dot {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  background: #ccc;
+  border-radius: 50%;
+  margin: 0 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.carousel-dot.active {
+  background: var(--secondary);
+}
+
 .hero {
   background: url('olas.png') no-repeat center/cover;
   height: 100vh;
@@ -139,5 +214,16 @@ body {
   .menu-section {
     margin: 20px 10px;
     padding: 15px;
+  }
+  .carousel {
+    border-radius: 10px;
+  }
+  .carousel-button {
+    padding: 8px 12px;
+  }
+  .carousel-dot {
+    width: 10px;
+    height: 10px;
+    margin: 0 4px;
   }
 }

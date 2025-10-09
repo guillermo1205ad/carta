@@ -9,6 +9,28 @@
 </head>
 
 <body>
+  <section class="gallery" aria-label="Galería de platos">
+    <div class="carousel">
+      <button class="carousel-button prev" aria-label="Imagen anterior">&#10094;</button>
+      <div class="carousel-track">
+        <div class="carousel-slide"><img src="img_1.png" alt="Plato destacado 1" loading="lazy" /></div>
+        <div class="carousel-slide"><img src="img_2.png" alt="Plato destacado 2" loading="lazy" /></div>
+        <div class="carousel-slide"><img src="img_3.png" alt="Plato destacado 3" loading="lazy" /></div>
+        <div class="carousel-slide"><img src="img_4.png" alt="Plato destacado 4" loading="lazy" /></div>
+        <div class="carousel-slide"><img src="img_5.png" alt="Plato destacado 5" loading="lazy" /></div>
+        <div class="carousel-slide"><img src="img_6.png" alt="Plato destacado 6" loading="lazy" /></div>
+        <div class="carousel-slide"><img src="img_7.png" alt="Plato destacado 7" loading="lazy" /></div>
+        <div class="carousel-slide"><img src="img_8.png" alt="Plato destacado 8" loading="lazy" /></div>
+        <div class="carousel-slide"><img src="img_9.png" alt="Plato destacado 9" loading="lazy" /></div>
+        <div class="carousel-slide"><img src="img_10.png" alt="Plato destacado 10" loading="lazy" /></div>
+        <div class="carousel-slide"><img src="img_11.png" alt="Plato destacado 11" loading="lazy" /></div>
+        <div class="carousel-slide"><img src="img_12.png" alt="Plato destacado 12" loading="lazy" /></div>
+        <div class="carousel-slide"><img src="img_13.png" alt="Plato destacado 13" loading="lazy" /></div>
+      </div>
+      <button class="carousel-button next" aria-label="Imagen siguiente">&#10095;</button>
+      <div class="carousel-dots" role="tablist" aria-label="Selector de imágenes"></div>
+    </div>
+  </section>
   <header class="hero">
     <img src="logo.jpeg" alt="Logo Mar Azul" class="logo" />
     <div class="hero-content">
@@ -183,4 +205,85 @@
     <p>© 2024 Restaurante Mar Azul · Todos los derechos reservados.</p>
   </footer>
 </body>
+  <script>
+    const track = document.querySelector('.carousel-track');
+    const slides = Array.from(track.children);
+    const nextButton = document.querySelector('.carousel-button.next');
+    const prevButton = document.querySelector('.carousel-button.prev');
+    const dotsNav = document.querySelector('.carousel-dots');
+    let currentIndex = 0;
+
+    const createDots = () => {
+      slides.forEach((_, index) => {
+        const button = document.createElement('button');
+        button.classList.add('carousel-dot');
+        button.type = 'button';
+        button.setAttribute('aria-label', `Mostrar imagen ${index + 1}`);
+        button.setAttribute('role', 'tab');
+        if (index === 0) {
+          button.classList.add('active');
+          button.setAttribute('aria-selected', 'true');
+        }
+        dotsNav.appendChild(button);
+      });
+    };
+
+    const dots = () => Array.from(dotsNav.children);
+
+    const updateSlidePosition = () => {
+      track.style.transform = `translateX(-${currentIndex * 100}%)`;
+      dots().forEach((dot, index) => {
+        const isActive = index === currentIndex;
+        dot.classList.toggle('active', isActive);
+        dot.setAttribute('aria-selected', isActive);
+      });
+    };
+
+    const moveToSlide = (index) => {
+      currentIndex = (index + slides.length) % slides.length;
+      updateSlidePosition();
+    };
+
+    const handleNext = () => moveToSlide(currentIndex + 1);
+    const handlePrev = () => moveToSlide(currentIndex - 1);
+
+    const handleDotClick = (event) => {
+      if (!event.target.matches('button')) return;
+      const dotIndex = dots().indexOf(event.target);
+      if (dotIndex !== -1) moveToSlide(dotIndex);
+    };
+
+    const initTouchEvents = () => {
+      let startX = 0;
+      let isMoving = false;
+
+      track.addEventListener('touchstart', (event) => {
+        startX = event.touches[0].clientX;
+        isMoving = true;
+      });
+
+      track.addEventListener('touchmove', (event) => {
+        if (!isMoving) return;
+        const currentX = event.touches[0].clientX;
+        const diff = startX - currentX;
+        if (Math.abs(diff) > 50) {
+          diff > 0 ? handleNext() : handlePrev();
+          isMoving = false;
+        }
+      });
+
+      track.addEventListener('touchend', () => {
+        isMoving = false;
+      });
+    };
+
+    createDots();
+    updateSlidePosition();
+    nextButton.addEventListener('click', handleNext);
+    prevButton.addEventListener('click', handlePrev);
+    dotsNav.addEventListener('click', handleDotClick);
+    initTouchEvents();
+
+    window.addEventListener('resize', updateSlidePosition);
+  </script>
 </html>
