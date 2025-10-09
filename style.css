@@ -1,9 +1,9 @@
 :root {
   --primary: #ffffff;
-  --secondary: #666666;
+  --secondary: #00ffff;
   --accent: rgba(0, 0, 0, 0.6);
-  --background: #f5f5f5;
-  --text: #333333;
+  --background: #121212;
+  --text: #e0e0e0;
   --font-title: 'Playfair Display', serif;
   --font-body: 'Work Sans', sans-serif;
 }
@@ -27,11 +27,11 @@ body {
   width: 100vw;
   height: 100vh;
   overflow: hidden;
-  background: linear-gradient(135deg, #ffffff 0%, #e0e0e0 100%);
+  background: linear-gradient(135deg, #121212 0%, #1e1e1e 100%);
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.8);
 }
 
 .carousel-track {
@@ -54,7 +54,7 @@ body {
   color: var(--secondary);
   padding: 3rem;
   box-sizing: border-box;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
   border-radius: 15px;
   margin: 0 1rem;
 }
@@ -68,13 +68,13 @@ body {
   font-family: var(--font-title);
   font-size: 3.5rem;
   margin-bottom: 1.5rem;
-  color: var(--accent);
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+  color: var(--secondary);
+  text-shadow: 1px 1px 4px rgba(0, 255, 255, 0.7);
 }
 
 .slide-content p {
   font-size: 1.4rem;
-  color: var(--secondary);
+  color: var(--text);
   margin-bottom: 2.5rem;
   line-height: 1.6;
 }
@@ -90,7 +90,7 @@ body {
   background: var(--background);
   padding: 1.2rem 2rem;
   border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.07);
+  box-shadow: 0 4px 15px rgba(0, 255, 255, 0.15);
   flex: 1 1 220px;
   max-width: 260px;
   color: var(--text);
@@ -100,21 +100,21 @@ body {
 
 .menu-item:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 8px 25px rgba(0, 255, 255, 0.3);
 }
 
 .menu-item h3 {
   margin-top: 0;
   margin-bottom: 0.75rem;
   font-family: var(--font-title);
-  color: var(--accent);
+  color: var(--secondary);
   font-size: 1.3rem;
 }
 
 .menu-item p {
   margin: 0;
   font-size: 1.1rem;
-  color: var(--secondary);
+  color: var(--text);
 }
 
 .carousel-button {
@@ -129,7 +129,7 @@ body {
   border-radius: 50%;
   z-index: 30;
   font-size: 1.7rem;
-  box-shadow: 0 0 15px var(--accent);
+  box-shadow: 0 0 15px var(--secondary);
   transition: background 0.35s ease, color 0.35s ease, box-shadow 0.35s ease;
 }
 
@@ -164,7 +164,7 @@ body {
   border-radius: 50%;
   cursor: pointer;
   transition: background 0.35s ease, box-shadow 0.35s ease;
-  box-shadow: 0 0 6px var(--accent);
+  box-shadow: 0 0 6px var(--secondary);
 }
 
 .carousel-dot.active {
