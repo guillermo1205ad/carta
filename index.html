@@ -1,227 +1,186 @@
-<h1>Carta del Restaurante</h1>
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Menú del Restaurante</title>
+  <title>Mar Azul - Menú del Restaurante</title>
   <link rel="stylesheet" href="style.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Work+Sans:wght@400;500&display=swap" rel="stylesheet">
 </head>
+
 <body>
   <header class="hero">
-    <div class="hero__overlay"></div>
-    <div class="hero__content">
-      <p class="hero__tagline">Sabores del mar y la tierra</p>
-      <h1 class="hero__title">Menú del Restaurante</h1>
-      <p class="hero__subtitle">Selecciona tu favorito y disfruta de una experiencia culinaria inolvidable.</p>
+    <img src="logo.jpeg" alt="Logo Mar Azul" class="logo" />
+    <div class="hero-content">
+      <h1>Menú del Restaurante</h1>
+      <p>Sabores del mar y la tierra</p>
+      <a href="#menu" class="btn">Ver Carta</a>
     </div>
   </header>
 
-  <main class="menu">
-    <section class="menu__section" id="entradas">
-      <div class="section__header">
-        <h2>Entrada - Empanadas</h2>
-        <span class="section__icon" aria-hidden="true">🥟</span>
-      </div>
-      <ul class="menu__list">
-        <li class="menu__item"><span>Queso</span><span class="price">$1.500</span></li>
-        <li class="menu__item"><span>Jamón Queso</span><span class="price">$2.500</span></li>
-        <li class="menu__item"><span>Aceituna Queso</span><span class="price">$3.000</span></li>
-        <li class="menu__item"><span>Napolitana</span><span class="price">$3.000</span></li>
-        <li class="menu__item"><span>Choclo Pollo Queso</span><span class="price">$3.000</span></li>
-        <li class="menu__item"><span>Champiñón Queso Aceituna</span><span class="price">$3.000</span></li>
-        <li class="menu__item"><span>Camarón Queso</span><span class="price">$3.500</span></li>
-        <li class="menu__item"><span>Macha Queso</span><span class="price">$3.500</span></li>
-        <li class="menu__item"><span>Marisco</span><span class="price">$3.500</span></li>
-        <li class="menu__item"><span>Carne</span><span class="price">$3.500</span></li>
-        <li class="menu__item"><span>Marisco Queso</span><span class="price">$4.000</span></li>
-        <li class="menu__item"><span>Ostión Queso</span><span class="price">$4.000</span></li>
-        <li class="menu__item"><span>Loco Queso</span><span class="price">$4.500</span></li>
-        <li class="menu__item"><span>Jaiba Queso</span><span class="price">$4.500</span></li>
-        <li class="menu__item"><span>Pulpo Queso</span><span class="price">$4.500</span></li>
-        <li class="menu__item"><span>Mixta Camarón-Machas</span><span class="price">$6.000</span></li>
+  <main id="menu">
+    <section class="menu-section">
+      <h2>🥟 Entrada - Empanadas</h2>
+      <ul>
+        <li>Queso <span>$1.500</span></li>
+        <li>Jamón Queso <span>$2.500</span></li>
+        <li>Aceituna Queso <span>$3.000</span></li>
+        <li>Napolitana <span>$3.000</span></li>
+        <li>Choclo Pollo Queso <span>$3.000</span></li>
+        <li>Champiñón Queso Aceituna <span>$3.000</span></li>
+        <li>Camarón Queso <span>$3.500</span></li>
+        <li>Macha Queso <span>$3.500</span></li>
+        <li>Marisco <span>$3.500</span></li>
+        <li>Carne <span>$3.500</span></li>
+        <li>Marisco Queso <span>$4.000</span></li>
+        <li>Ostión Queso <span>$4.000</span></li>
+        <li>Loco Queso <span>$4.500</span></li>
+        <li>Jaiba Queso <span>$4.500</span></li>
+        <li>Pulpo Queso <span>$4.500</span></li>
+        <li>Mixta Camarón-Machas <span>$6.000</span></li>
       </ul>
     </section>
 
-    <section class="menu__section" id="ceviches">
-      <div class="section__header">
-        <h2>Ceviches</h2>
-        <span class="section__icon" aria-hidden="true">🦐</span>
-      </div>
-      <ul class="menu__list">
-        <li class="menu__item"><span>Ceviche de Reineta</span><span class="price">$12.000</span></li>
-        <li class="menu__item"><span>Mariscal Frío</span><span class="price">$13.000</span></li>
-        <li class="menu__item"><span>Ceviche Mixto (Reineta + Camarones)</span><span class="price">$15.000</span></li>
+    <section class="menu-section">
+      <h2>🦐 Ceviches</h2>
+      <ul>
+        <li>Ceviche de Reineta <span>$12.000</span></li>
+        <li>Mariscal Frío <span>$13.000</span></li>
+        <li>Ceviche Mixto (Reineta + Camarones) <span>$15.000</span></li>
       </ul>
     </section>
 
-    <section class="menu__section" id="parmesanos">
-      <div class="section__header">
-        <h2>Parmesanos</h2>
-        <span class="section__icon" aria-hidden="true">🧀</span>
-      </div>
-      <ul class="menu__list">
-        <li class="menu__item"><span>Camarón Parmesano</span><span class="price">$13.000</span></li>
-        <li class="menu__item"><span>Macha Parmesana (12 unidades)</span><span class="price">$15.000</span></li>
-        <li class="menu__item"><span>Ostión Parmesano (10 unidades)</span><span class="price">$17.000</span></li>
-        <li class="menu__item"><span>Parmesano Mixto (Camarón, Macha, Ostión)</span><span class="price">$20.000</span></li>
+    <section class="menu-section">
+      <h2>🧀 Parmesanos</h2>
+      <ul>
+        <li>Camarón Parmesano <span>$13.000</span></li>
+        <li>Macha Parmesana (12 unidades) <span>$15.000</span></li>
+        <li>Ostión Parmesano (10 unidades) <span>$17.000</span></li>
+        <li>Parmesano Mixto (Camarón, Macha, Ostión) <span>$20.000</span></li>
       </ul>
     </section>
 
-    <section class="menu__section" id="caldos">
-      <div class="section__header">
-        <h2>Caldos</h2>
-        <span class="section__icon" aria-hidden="true">🍲</span>
-      </div>
-      <ul class="menu__list">
-        <li class="menu__item"><span>Paila Marina</span><span class="price">$10.000</span></li>
-        <li class="menu__item"><span>Caldillo de Congrio</span><span class="price">$12.000</span></li>
-        <li class="menu__item"><span>Consomé de Paila Marina</span><span class="price">$5.000</span></li>
-        <li class="menu__item"><span>Consomé de Caldillo</span><span class="price">$5.000</span></li>
-        <li class="menu__item"><span>Paila Marina XL</span><span class="price">$15.000</span></li>
+    <section class="menu-section">
+      <h2>🍲 Caldos</h2>
+      <ul>
+        <li>Paila Marina <span>$10.000</span></li>
+        <li>Caldillo de Congrio <span>$12.000</span></li>
+        <li>Consomé de Paila Marina <span>$5.000</span></li>
+        <li>Consomé de Caldillo <span>$5.000</span></li>
+        <li>Paila Marina XL <span>$15.000</span></li>
       </ul>
     </section>
 
-    <section class="menu__section" id="chupes">
-      <div class="section__header">
-        <h2>Chupes</h2>
-        <span class="section__icon" aria-hidden="true">🥘</span>
-      </div>
-      <ul class="menu__list">
-        <li class="menu__item"><span>Chupe de Camarón</span><span class="price">$10.000</span></li>
-        <li class="menu__item"><span>Chupe de Mariscos (Mixto)</span><span class="price">$13.000</span></li>
-        <li class="menu__item"><span>Chupe de Machas</span><span class="price">$13.000</span></li>
-        <li class="menu__item"><span>Chupe de Locos</span><span class="price">$15.000</span></li>
-        <li class="menu__item"><span>Pastel de Jaiba</span><span class="price">$13.000</span></li>
-        <li class="menu__item"><span>Chupe de Ostión</span><span class="price">$15.000</span></li>
-        <li class="menu__item"><span>Chupe de Pulpo</span><span class="price">$15.000</span></li>
+    <section class="menu-section">
+      <h2>🥘 Chupes</h2>
+      <ul>
+        <li>Chupe de Camarón <span>$10.000</span></li>
+        <li>Chupe de Mariscos (Mixto) <span>$13.000</span></li>
+        <li>Chupe de Machas <span>$13.000</span></li>
+        <li>Chupe de Locos <span>$15.000</span></li>
+        <li>Pastel de Jaiba <span>$13.000</span></li>
+        <li>Chupe de Ostión <span>$15.000</span></li>
+        <li>Chupe de Pulpo <span>$15.000</span></li>
       </ul>
     </section>
 
-    <section class="menu__section" id="sandwich">
-      <div class="section__header">
-        <h2>Sandwich</h2>
-        <span class="section__icon" aria-hidden="true">🥪</span>
-      </div>
-      <ul class="menu__list">
-        <li class="menu__item"><span>Sandwich de Reineta</span><span class="price">$6.000</span></li>
-        <li class="menu__item"><span>Sandwich de Merluza</span><span class="price">$4.500</span></li>
-        <li class="menu__item"><span>Sandwich de Reineta con Papas Fritas</span><span class="price">$7.500</span></li>
-        <li class="menu__item"><span>Sandwich de Merluza con Papas Fritas</span><span class="price">$6.500</span></li>
+    <section class="menu-section">
+      <h2>🥪 Sandwich</h2>
+      <ul>
+        <li>Sandwich de Reineta <span>$6.000</span></li>
+        <li>Sandwich de Merluza <span>$4.500</span></li>
+        <li>Sandwich de Reineta con Papas Fritas <span>$7.500</span></li>
+        <li>Sandwich de Merluza con Papas Fritas <span>$6.500</span></li>
       </ul>
     </section>
 
-    <section class="menu__section" id="platos-principales">
-      <div class="section__header">
-        <h2>Pescados, Pollos o Chuletas con Agregados</h2>
-        <span class="section__icon" aria-hidden="true">🍽️</span>
-      </div>
-      <ul class="menu__list">
-        <li class="menu__item"><span>Merluza Frita</span><span class="price">$9.000</span></li>
-        <li class="menu__item"><span>Reineta</span><span class="price">$12.000</span></li>
-        <li class="menu__item"><span>Congrio Medallón</span><span class="price">$15.000</span></li>
-        <li class="menu__item"><span>Albacora</span><span class="price">$13.000</span></li>
-        <li class="menu__item"><span>Pollo a la Plancha</span><span class="price">$10.000</span></li>
-        <li class="menu__item"><span>Chuleta</span><span class="price">$12.000</span></li>
-        <li class="menu__item"><span>Nugget de Pollo con Papas Fritas (6 unidades)</span><span class="price">$7.000</span></li>
-        <li class="menu__item"><span>Salchipapas</span><span class="price">$5.000</span></li>
+    <section class="menu-section">
+      <h2>🍽️ Pescados, Pollos o Chuletas con Agregados</h2>
+      <ul>
+        <li>Merluza Frita <span>$9.000</span></li>
+        <li>Reineta <span>$12.000</span></li>
+        <li>Congrio Medallón <span>$15.000</span></li>
+        <li>Albacora <span>$13.000</span></li>
+        <li>Pollo a la Plancha <span>$10.000</span></li>
+        <li>Chuleta <span>$12.000</span></li>
+        <li>Nugget de Pollo con Papas Fritas (6 unidades) <span>$7.000</span></li>
+        <li>Salchipapas <span>$5.000</span></li>
       </ul>
-      <div class="menu__note">
-        <h3>Agregados a elección</h3>
-        <ol class="addons">
-          <li>N°1 Arroz + Chilena</li>
-          <li>N°2 Arroz + Tomate</li>
-          <li>N°3 Arroz + Papas Mayo</li>
-          <li>N°4 Ensalada Surtida (Papas Mayo, Lechuga, Betarraga, Zanahoria y Tomate)</li>
-          <li>N°5 Arroz</li>
-          <li>N°6 Puré</li>
-        </ol>
-      </div>
+      <h3>Agregados a elección</h3>
+      <ol>
+        <li>N°1 Arroz + Chilena</li>
+        <li>N°2 Arroz + Tomate</li>
+        <li>N°3 Arroz + Papas Mayo</li>
+        <li>N°4 Ensalada Surtida</li>
+        <li>N°5 Arroz</li>
+        <li>N°6 Puré</li>
+      </ol>
     </section>
 
-    <section class="menu__section" id="platos-extras">
-      <div class="section__header">
-        <h2>Platos Extras</h2>
-        <span class="section__icon" aria-hidden="true">🍤</span>
-      </div>
-      <ul class="menu__list">
-        <li class="menu__item"><span>Chorrillana Marina Grande</span><span class="price">$20.000</span></li>
-        <li class="menu__item"><span>Jardín del Mar</span><span class="price">$30.000</span></li>
-        <li class="menu__item"><span>Chorrillana Marina Mediana</span><span class="price">$15.000</span></li>
+    <section class="menu-section">
+      <h2>🍤 Platos Extras</h2>
+      <ul>
+        <li>Chorrillana Marina Grande <span>$20.000</span></li>
+        <li>Jardín del Mar <span>$30.000</span></li>
+        <li>Chorrillana Marina Mediana <span>$15.000</span></li>
       </ul>
     </section>
 
-    <section class="menu__section" id="porciones">
-      <div class="section__header">
-        <h2>Porciones</h2>
-        <span class="section__icon" aria-hidden="true">🥗</span>
-      </div>
-      <ul class="menu__list">
-        <li class="menu__item"><span>Porción de Arroz</span><span class="price">$1.500</span></li>
-        <li class="menu__item"><span>Porción de Puré</span><span class="price">$3.000</span></li>
-        <li class="menu__item"><span>Porción de Papas Fritas</span><span class="price">$3.000</span></li>
-        <li class="menu__item"><span>Porción de una Ensalada</span><span class="price">$3.000</span></li>
-        <li class="menu__item"><span>Porción de Ensalada Surtida</span><span class="price">$5.000</span></li>
-        <li class="menu__item"><span>Porción a lo Pobre</span><span class="price">$6.500</span></li>
+    <section class="menu-section">
+      <h2>🥗 Porciones</h2>
+      <ul>
+        <li>Porción de Arroz <span>$1.500</span></li>
+        <li>Porción de Puré <span>$3.000</span></li>
+        <li>Porción de Papas Fritas <span>$3.000</span></li>
+        <li>Porción de una Ensalada <span>$3.000</span></li>
+        <li>Porción de Ensalada Surtida <span>$5.000</span></li>
+        <li>Porción a lo Pobre <span>$6.500</span></li>
       </ul>
     </section>
 
-    <section class="menu__section" id="bebestibles">
-      <div class="section__header">
-        <h2>Bebestibles</h2>
-        <span class="section__icon" aria-hidden="true">☕</span>
-      </div>
-      <ul class="menu__list">
-        <li class="menu__item"><span>Taza de Té / Infusión</span><span class="price">$1.500</span></li>
-        <li class="menu__item"><span>Taza de Café</span><span class="price">$2.000</span></li>
-        <li class="menu__item"><span>Taza de Leche (con café, té o chocolate)</span><span class="price">$3.000</span></li>
-        <li class="menu__item"><span>Té de Hoja</span><span class="price">$1.500</span></li>
+    <section class="menu-section">
+      <h2>☕ Bebestibles</h2>
+      <ul>
+        <li>Taza de Té / Infusión <span>$1.500</span></li>
+        <li>Taza de Café <span>$2.000</span></li>
+        <li>Taza de Leche (con café, té o chocolate) <span>$3.000</span></li>
+        <li>Té de Hoja <span>$1.500</span></li>
       </ul>
     </section>
 
-    <section class="menu__section" id="bebidas-analcoholicas">
-      <div class="section__header">
-        <h2>Bebidas Analcóholicas</h2>
-        <span class="section__icon" aria-hidden="true">🥤</span>
-      </div>
-      <ul class="menu__list">
-        <li class="menu__item"><span>Bebidas de Botellín</span><span class="price">$1.500</span></li>
-        <li class="menu__item"><span>Agua Mineral con y sin gas</span><span class="price">$2.000</span></li>
-        <li class="menu__item"><span>Jugos Botellín</span><span class="price">$1.500</span></li>
-        <li class="menu__item"><span>Jugos Naturales</span><span class="price">$2.500</span></li>
-        <li class="menu__item"><span>Limonada</span><span class="price">$2.500</span></li>
+    <section class="menu-section">
+      <h2>🥤 Bebidas Analcóholicas</h2>
+      <ul>
+        <li>Bebidas de Botellín <span>$1.500</span></li>
+        <li>Agua Mineral con y sin gas <span>$2.000</span></li>
+        <li>Jugos Botellín <span>$1.500</span></li>
+        <li>Jugos Naturales <span>$2.500</span></li>
+        <li>Limonada <span>$2.500</span></li>
       </ul>
     </section>
 
-    <section class="menu__section" id="bebidas-alcoholicas">
-      <div class="section__header">
-        <h2>Bebidas Alcohólicas</h2>
-        <span class="section__icon" aria-hidden="true">🍻</span>
-      </div>
-      <ul class="menu__list">
-        <li class="menu__item"><span>Petaca de Blanco o Tinto</span><span class="price">$2.000</span></li>
-        <li class="menu__item"><span>Heineken</span><span class="price">$3.000</span></li>
-        <li class="menu__item"><span>Royal</span><span class="price">$3.000</span></li>
-        <li class="menu__item"><span>Corona</span><span class="price">$3.000</span></li>
-        <li class="menu__item"><span>Budweiser</span><span class="price">$2.500</span></li>
-        <li class="menu__item"><span>Mango Sour</span><span class="price">$4.000</span></li>
-        <li class="menu__item"><span>Serena Libre</span><span class="price">$4.000</span></li>
-        <li class="menu__item"><span>Pisco Sour</span><span class="price">$4.000</span></li>
-        <li class="menu__item"><span>Kunstmann</span><span class="price">$4.000</span></li>
-        <li class="menu__item"><span>Austral</span><span class="price">$4.000</span></li>
-        <li class="menu__item"><span>Vino 700cc Santa Rita</span><span class="price">$7.000</span></li>
-        <li class="menu__item"><span>Michelada (Sal, Merkén y Limón)</span><span class="price">$2.000</span></li>
-        <li class="menu__item"><span>Chelada (Sal y Limón)</span><span class="price">$2.000</span></li>
+    <section class="menu-section">
+      <h2>🍻 Bebidas Alcohólicas</h2>
+      <ul>
+        <li>Petaca de Blanco o Tinto <span>$2.000</span></li>
+        <li>Heineken <span>$3.000</span></li>
+        <li>Royal <span>$3.000</span></li>
+        <li>Corona <span>$3.000</span></li>
+        <li>Budweiser <span>$2.500</span></li>
+        <li>Mango Sour <span>$4.000</span></li>
+        <li>Serena Libre <span>$4.000</span></li>
+        <li>Pisco Sour <span>$4.000</span></li>
+        <li>Kunstmann <span>$4.000</span></li>
+        <li>Austral <span>$4.000</span></li>
+        <li>Vino 700cc Santa Rita <span>$7.000</span></li>
+        <li>Michelada (Sal, Merkén y Limón) <span>$2.000</span></li>
+        <li>Chelada (Sal y Limón) <span>$2.000</span></li>
       </ul>
     </section>
   </main>
 
   <footer class="footer">
-    <p>© 2024 Restaurante Sabores del Puerto. Todos los derechos reservados.</p>
+    <p>© 2024 Restaurante Mar Azul · Todos los derechos reservados.</p>
   </footer>
 </body>
 </html>
