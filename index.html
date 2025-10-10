@@ -18,6 +18,12 @@
         <div class="slide-content">
           <h2>Mar Azul</h2>
           <p>Bienvenidos a nuestro menú</p>
+          <div class="social-icons">
+            <a href="https://www.facebook.com/people/Restaurante-Mar-Azul/61581713415202/" target="_blank"><img src="facebook.png" alt="Facebook"></a>
+            <a href="https://www.instagram.com/marazul_ig/?hl=en" target="_blank"><img src="instagram.png" alt="Instagram"></a>
+            <a href="https://www.tiktok.com/@mar.azul.tiktok" target="_blank"><img src="tiktok.png" alt="TikTok"></a>
+            <a href="mailto:contacto.restaurante.mar.azul@gmail.com"><img src="gmail.png" alt="Correo"></a>
+          </div>
         </div>
       </article>
       <article class="carousel-slide" role="tabpanel" aria-hidden="true" tabindex="-1">
@@ -190,17 +196,6 @@
       </article>
       <article class="carousel-slide" role="tabpanel" aria-hidden="true" tabindex="-1">
         <div class="slide-content">
-          <h2>🍰 Postres</h2>
-          <ul>
-            <li>Torta de Chocolate <span>$4.000</span></li>
-            <li>Helado Artesanal <span>$3.500</span></li>
-            <li>Flan Casero <span>$3.000</span></li>
-            <li>Fruta de Temporada <span>$2.500</span></li>
-          </ul>
-        </div>
-      </article>
-      <article class="carousel-slide" role="tabpanel" aria-hidden="true" tabindex="-1">
-        <div class="slide-content">
           <h2>🥂 Cócteles</h2>
           <ul>
             <li>Mango Sour <span>$4.000</span></li>
@@ -214,6 +209,12 @@
         <div class="slide-content">
           <h2>Gracias por su visita</h2>
           <p>Esperamos que disfrute su experiencia en Mar Azul.</p>
+          <div class="social-icons">
+            <a href="https://www.facebook.com/people/Restaurante-Mar-Azul/61581713415202/" target="_blank"><img src="facebook.png" alt="Facebook"></a>
+            <a href="https://www.instagram.com/marazul_ig/?hl=en" target="_blank"><img src="instagram.png" alt="Instagram"></a>
+            <a href="https://www.tiktok.com/@mar.azul.tiktok" target="_blank"><img src="tiktok.png" alt="TikTok"></a>
+            <a href="mailto:contacto.restaurante.mar.azul@gmail.com"><img src="gmail.png" alt="Correo"></a>
+          </div>
         </div>
       </article>
     </div>
@@ -221,8 +222,6 @@
     <div class="carousel-dots" role="tablist" aria-label="Selector de imágenes"></div>
   </div>
   <script>
-    // Tu JavaScript está perfecto, no necesita cambios.
-    // Lo incluyo aquí para que el archivo sea completo.
     const track = document.querySelector('.carousel-track');
     const slides = Array.from(track.children);
     const nextButton = document.querySelector('.carousel-button.next');
@@ -230,7 +229,33 @@
     const dotsNav = document.querySelector('.carousel-dots');
     let currentIndex = 0;
 
+    // --- Control de visibilidad de los botones ---
+    let timeoutId;
+    const hideButtonsDelay = 2000; // 2 segundos
+
+    const showButtons = () => {
+      nextButton.classList.add('visible');
+      prevButton.classList.add('visible');
+      clearTimeout(timeoutId); // Limpia cualquier temporizador anterior
+      timeoutId = setTimeout(hideButtons, hideButtonsDelay); // Oculta después de 2 segundos
+    };
+
+    const hideButtons = () => {
+      nextButton.classList.remove('visible');
+      prevButton.classList.remove('visible');
+    };
+
+    // Event listeners para mostrar botones con interacción
+    document.querySelector('.carousel').addEventListener('mousemove', showButtons);
+    document.querySelector('.carousel').addEventListener('touchstart', showButtons); // Para pantallas táctiles
+
+    // Inicialmente, mostrar los botones
+    showButtons();
+    // ----------------------------------------------------
+
+
     const createDots = () => {
+      dotsNav.innerHTML = '';
       slides.forEach((_, index) => {
         const button = document.createElement('button');
         button.classList.add('carousel-dot');
@@ -249,6 +274,7 @@
     const dots = () => Array.from(dotsNav.children);
 
     const updateSlidePosition = () => {
+      if (slides.length === 0) return;
       track.style.transform = `translateX(-${currentIndex * 100}%)`;
       dots().forEach((dot, index) => {
         const isActive = index === currentIndex;
@@ -267,8 +293,10 @@
     };
 
     const moveToSlide = (index) => {
+      if (slides.length === 0) return;
       currentIndex = (index + slides.length) % slides.length;
       updateSlidePosition();
+      showButtons(); // Mostrar botones cada vez que se cambia de slide
     };
 
     const handleNext = () => moveToSlide(currentIndex + 1);
@@ -287,6 +315,7 @@
       track.addEventListener('touchstart', (event) => {
         startX = event.touches[0].clientX;
         isMoving = true;
+        showButtons(); // Mostrar botones al iniciar un toque
       });
 
       track.addEventListener('touchmove', (event) => {
@@ -301,6 +330,7 @@
 
       track.addEventListener('touchend', () => {
         isMoving = false;
+        showButtons(); // Mostrar botones al finalizar un toque
       });
     };
 

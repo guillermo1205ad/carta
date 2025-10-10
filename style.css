@@ -79,26 +79,25 @@ body {
 .carousel-slide:nth-child(11) { background-image: url('img_11.png'); }
 .carousel-slide:nth-child(12) { background-image: url('img_12.png'); }
 .carousel-slide:nth-child(13) { background-image: url('img_13.png'); }
-.carousel-slide:nth-child(14) { background-image: url('img_14.png'); }
-.carousel-slide:nth-child(15) { background-image: url('img_15.png'); }
-.carousel-slide:nth-child(16) { background-image: url('img_16.png'); }
+.carousel-slide:nth-child(14) { background-image: url('img_15.png'); } 
+.carousel-slide:nth-child(15) { background-image: url('img_16.png'); }
 
 
 .slide-content {
-  position: relative; /* Para que se ponga sobre el pseudo-elemento ::before */
-  z-index: 2; /* Encima del overlay */
+  position: relative; 
+  z-index: 2;
   max-width: 800px;
-  max-height: 90vh; /* Para que no se salga de la pantalla */
-  overflow-y: auto; /* Scroll si el contenido es muy largo */
+  max-height: 90vh;
+  overflow-y: auto;
   padding: 1rem;
   border-radius: 10px;
-  background-color: rgba(0, 0, 0, 0.2); /* Fondo sutil para el texto */
-  backdrop-filter: blur(4px); /* Efecto de vidrio esmerilado */
+  background-color: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(4px);
 }
 
 .slide-content h2 {
   font-family: var(--font-title);
-  font-size: clamp(2.5rem, 6vw, 4rem); /* Tamaño de fuente adaptable */
+  font-size: clamp(2.5rem, 6vw, 4rem);
   margin-bottom: 1rem;
   color: var(--primary);
   text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
@@ -140,12 +139,13 @@ body {
 }
 
 
-/* --- Botones y Puntos del Carrusel (sin cambios mayores) --- */
+/* --- Botones del Carrusel --- */
 .carousel-button {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: var(--secondary);
+  
+  background: rgba(0, 180, 216, 0.5);
   border: none;
   color: var(--primary);
   padding: 1rem;
@@ -159,18 +159,30 @@ body {
   justify-content: center;
   align-items: center;
   box-shadow: 0 0 15px rgba(0, 180, 216, 0.5);
-  transition: all 0.3s ease;
+  
+  opacity: 0; /* INICIALMENTE INVISIBLE */
+  pointer-events: none; /* No interactuable cuando es invisible */
+  transition: opacity 0.5s ease, background 0.3s ease, transform 0.3s ease;
+}
+
+/* Estado visible y activo de los botones */
+.carousel-button.visible {
+  opacity: 1; /* Completamente visible */
+  pointer-events: auto; /* Permite interacción */
 }
 
 .carousel-button:hover {
   background: var(--primary);
   color: var(--secondary);
   box-shadow: 0 0 20px rgba(255, 255, 255, 0.7);
+  transform: translateY(-50%) scale(1.1);
 }
 
 .carousel-button.prev { left: 20px; }
 .carousel-button.next { right: 20px; }
 
+
+/* --- Puntos del Carrusel --- */
 .carousel-dots {
   position: absolute;
   bottom: 20px;
@@ -196,6 +208,34 @@ body {
   transform: scale(1.2);
 }
 
+
+/* --- Estilos para Redes Sociales --- */
+.social-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-top: 1.5rem;
+}
+
+.social-icons a {
+  display: inline-block;
+}
+
+.social-icons img {
+  width: 40px;
+  height: 40px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  opacity: 0.8;
+}
+
+.social-icons img:hover {
+  transform: scale(1.15);
+  opacity: 1;
+}
+
+
+/* --- Media Queries --- */
 @media (max-width: 600px) {
   .slide-content {
     padding: 0.5rem;
@@ -208,4 +248,9 @@ body {
   }
   .carousel-button.prev { left: 10px; }
   .carousel-button.next { right: 10px; }
+
+  .social-icons img {
+    width: 35px;
+    height: 35px;
+  }
 }
