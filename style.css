@@ -92,7 +92,7 @@ body {
   border-radius: 10px;
   background-color: rgba(0, 0, 0, 0.2);
   backdrop-filter: blur(4px);
-  z-index: 3; /* IMPORTANTE: Por encima de los botones */
+  z-index: 3; /* <-- CORRECCIÓN: Por encima de los botones invisibles */
 }
 
 .slide-content h2 {
@@ -139,7 +139,7 @@ body {
 }
 
 
-/* --- Botones del Carrusel (NUEVA LÓGICA) --- */
+/* --- Botones del Carrusel (ÁREAS INVISIBLES) --- */
 .carousel-button {
   position: absolute;
   top: 0;
@@ -151,7 +151,7 @@ body {
   padding: 0 20px;
   
   cursor: pointer;
-  z-index: 2; /* IMPORTANTE: Debajo del contenido */
+  z-index: 2; /* <-- CORRECCIÓN: Debajo del contenido para permitir clics */
   
   display: flex;
   align-items: center;
@@ -167,6 +167,7 @@ body {
   justify-content: flex-end;
 }
 
+/* El icono (span) es el elemento visual que aparece y desaparece */
 .carousel-button span {
   background: rgba(0, 180, 216, 0.5);
   color: var(--primary);
@@ -183,6 +184,7 @@ body {
   transition: opacity 0.5s ease;
 }
 
+/* Clase para hacer visible el icono */
 .carousel-button.visible span {
   opacity: 1;
 }
@@ -239,7 +241,6 @@ body {
   transform: scale(1.15);
   opacity: 1;
 }
-
 
 /* --- Media Queries --- */
 @media (max-width: 600px) {
