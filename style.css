@@ -62,7 +62,7 @@ body {
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.6); /* Overlay oscuro */
-  z-index: 1; /* Se pone debajo del contenido */
+  z-index: 1; 
 }
 
 /* --- Asignación de cada imagen a su slide --- */
@@ -92,7 +92,8 @@ body {
   border-radius: 10px;
   background-color: rgba(0, 0, 0, 0.2);
   backdrop-filter: blur(4px);
-  z-index: 3; /* <-- CORRECCIÓN #1: Asegura que el contenido esté arriba */
+  /* ===== LA SOLUCIÓN DEFINITIVA (Parte 1) ===== */
+  z-index: 5; /* Asegura que el contenido esté por encima de los botones */
 }
 
 .slide-content h2 {
@@ -151,7 +152,8 @@ body {
   padding: 0 20px;
   
   cursor: pointer;
-  z-index: 2; /* <-- CORRECCIÓN #2: Se asegura que estén debajo del contenido */
+  /* ===== LA SOLUCIÓN DEFINITIVA (Parte 2) ===== */
+  z-index: 4; /* Deben estar por debajo del contenido */
   
   display: flex;
   align-items: center;
