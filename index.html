@@ -98,13 +98,19 @@
       </article>
       <article class="carousel-slide" role="tabpanel" aria-hidden="true" tabindex="-1">
         <div class="slide-content">
-          <h2>🥪 Sándwiches</h2>
+          <h2 class="sandwich-title">🥪 Sándwiches <img src="marraqueta.png" alt="Icono de Marraqueta" class="marraqueta-icon"></h2>
           <ul>
             <li>Sándwich de Reineta <span>$6.000</span></li>
             <li>Sándwich de Merluza <span>$4.500</span></li>
             <li>Sándwich de Reineta con Papas Fritas <span>$7.500</span></li>
             <li>Sándwich de Merluza con Papas Fritas <span>$6.500</span></li>
           </ul>
+          <h3>Acompañamientos a elección</h3>
+          <ol>
+            <li>Con Tomate</li>
+            <li>Con Cebolla</li>
+            <li>Con Chilena (Tomate y Cebolla)</li>
+          </ol>
         </div>
       </article>
       <article class="carousel-slide" role="tabpanel" aria-hidden="true" tabindex="-1">
@@ -230,27 +236,16 @@
     let currentIndex = 0;
 
     // --- Control de visibilidad de los botones ---
-    let timeoutId;
-    const hideButtonsDelay = 2000; // 2 segundos
-
-    const showButtons = () => {
-      nextButton.classList.add('visible');
-      prevButton.classList.add('visible');
-      clearTimeout(timeoutId); // Limpia cualquier temporizador anterior
-      timeoutId = setTimeout(hideButtons, hideButtonsDelay); // Oculta después de 2 segundos
-    };
-
     const hideButtons = () => {
       nextButton.classList.remove('visible');
       prevButton.classList.remove('visible');
     };
 
-    // Event listeners para mostrar botones con interacción
-    document.querySelector('.carousel').addEventListener('mousemove', showButtons);
-    document.querySelector('.carousel').addEventListener('touchstart', showButtons); // Para pantallas táctiles
-
-    // Inicialmente, mostrar los botones
-    showButtons();
+    // Al cargar la página, muestra los botones y prográmalos para que se oculten después de 2 segundos.
+    // Esto solo se ejecutará una vez.
+    nextButton.classList.add('visible');
+    prevButton.classList.add('visible');
+    setTimeout(hideButtons, 2000); // 2 segundos
     // ----------------------------------------------------
 
 
@@ -296,7 +291,6 @@
       if (slides.length === 0) return;
       currentIndex = (index + slides.length) % slides.length;
       updateSlidePosition();
-      showButtons(); // Mostrar botones cada vez que se cambia de slide
     };
 
     const handleNext = () => moveToSlide(currentIndex + 1);
@@ -315,7 +309,6 @@
       track.addEventListener('touchstart', (event) => {
         startX = event.touches[0].clientX;
         isMoving = true;
-        showButtons(); // Mostrar botones al iniciar un toque
       });
 
       track.addEventListener('touchmove', (event) => {
@@ -330,7 +323,6 @@
 
       track.addEventListener('touchend', () => {
         isMoving = false;
-        showButtons(); // Mostrar botones al finalizar un toque
       });
     };
 

@@ -234,6 +234,20 @@ body {
   opacity: 1;
 }
 
+/* --- Estilos para el icono de Marraqueta (NUEVO) --- */
+.sandwich-title {
+  display: flex; /* Permite al icono y al texto estar en la misma línea */
+  align-items: center; /* Centra verticalmente el icono con el texto */
+  justify-content: center; /* Centra el contenido horizontalmente */
+  gap: 10px; /* Espacio entre el texto y el icono */
+}
+
+.marraqueta-icon {
+  width: 50px; /* Ajusta el tamaño según sea necesario */
+  height: auto;
+  vertical-align: middle; /* Alinea con el texto */
+}
+
 
 /* --- Media Queries --- */
 @media (max-width: 600px) {
@@ -252,5 +266,8 @@ body {
   .social-icons img {
     width: 35px;
     height: 35px;
+  }
+  .marraqueta-icon {
+    width: 40px; /* Ajusta el tamaño para móviles */
   }
 }
