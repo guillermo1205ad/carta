@@ -139,57 +139,25 @@ body {
 }
 
 
-/* --- Botones del Carrusel (NUEVA LÓGICA) --- */
+/* --- Botones del Carrusel (ÁREAS INVISIBLES) --- */
 .carousel-button {
   position: absolute;
   top: 0;
   width: 50%; /* Ocupa la mitad de la pantalla */
   height: 100%;
-  
-  background: transparent; /* El área de clic es invisible */
+  background: transparent;
   border: none;
-  padding: 0 20px; /* Espacio para que el icono no quede pegado al borde */
-  
   cursor: pointer;
   z-index: 10;
-  
-  /* Flexbox para posicionar el icono (span) dentro del área */
-  display: flex;
-  align-items: center;
 }
 
 .carousel-button.prev { 
   left: 0;
-  justify-content: flex-start; /* Alinea el icono a la izquierda */
 }
 
 .carousel-button.next { 
   right: 0;
-  justify-content: flex-end; /* Alinea el icono a la derecha */
 }
-
-/* El icono (span) es el elemento visual */
-.carousel-button span {
-  background: rgba(0, 180, 216, 0.5);
-  color: var(--primary);
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  font-size: 1.5rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  box-shadow: 0 0 15px rgba(0, 180, 216, 0.5);
-
-  opacity: 0; /* INICIALMENTE INVISIBLE */
-  transition: opacity 0.5s ease;
-}
-
-/* Clase para hacer visible el icono */
-.carousel-button.visible span {
-  opacity: 1;
-}
-
 
 /* --- Puntos del Carrusel --- */
 .carousel-dots {
@@ -264,15 +232,7 @@ body {
     padding: 0.5rem;
     max-height: 85vh;
   }
-  .carousel-button {
-    padding: 0 10px;
-  }
-  .carousel-button span {
-    width: 40px;
-    height: 40px;
-    font-size: 1.2rem;
-  }
-
+  
   .social-icons img {
     width: 35px;
     height: 35px;
