@@ -92,7 +92,7 @@ body {
   border-radius: 10px;
   background-color: rgba(0, 0, 0, 0.2);
   backdrop-filter: blur(4px);
-  z-index: 3; /* <-- CORRECCIÓN: Por encima de los botones invisibles */
+  z-index: 3; /* <-- CORRECCIÓN #1: Asegura que el contenido esté arriba */
 }
 
 .slide-content h2 {
@@ -151,7 +151,7 @@ body {
   padding: 0 20px;
   
   cursor: pointer;
-  z-index: 2; /* <-- CORRECCIÓN: Debajo del contenido para permitir clics */
+  z-index: 2; /* <-- CORRECCIÓN #2: Se asegura que estén debajo del contenido */
   
   display: flex;
   align-items: center;
