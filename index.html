@@ -11,15 +11,15 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="carousel">
+  <div class="carousel" role="region" aria-label="Menú del Restaurante Mar Azul">
     <button class="carousel-button prev" aria-label="Imagen anterior">&#10094;</button>
     <div class="carousel-track">
-      <article class="carousel-slide">
+      <article class="carousel-slide" role="tabpanel" aria-hidden="false" tabindex="0">
         <img src="img_portada.png" alt="Portada Mar Azul" loading="lazy" />
         <h2>Mar Azul</h2>
         <p>Bienvenidos al menú del restaurante Mar Azul.</p>
       </article>
-      <article class="carousel-slide">
+      <article class="carousel-slide" role="tabpanel" aria-hidden="true" tabindex="-1">
         <img src="img_1.png" alt="🥟 Empanadas" loading="lazy" />
         <h2>🥟 Empanadas</h2>
         <ul>
@@ -41,7 +41,7 @@
           <li>Mixta Camarón-Machas <span>$6.000</span></li>
         </ul>
       </article>
-      <article class="carousel-slide">
+      <article class="carousel-slide" role="tabpanel" aria-hidden="true" tabindex="-1">
         <img src="img_2.png" alt="🦐 Ceviches" loading="lazy" />
         <h2>🦐 Ceviches</h2>
         <ul>
@@ -50,7 +50,7 @@
           <li>Ceviche Mixto (Reineta + Camarones) <span>$15.000</span></li>
         </ul>
       </article>
-      <article class="carousel-slide">
+      <article class="carousel-slide" role="tabpanel" aria-hidden="true" tabindex="-1">
         <img src="img_3.png" alt="🧀 Parmesanos" loading="lazy" />
         <h2>🧀 Parmesanos</h2>
         <ul>
@@ -60,7 +60,7 @@
           <li>Parmesano Mixto (Camarón, Macha, Ostión) <span>$20.000</span></li>
         </ul>
       </article>
-      <article class="carousel-slide">
+      <article class="carousel-slide" role="tabpanel" aria-hidden="true" tabindex="-1">
         <img src="img_4.png" alt="🍲 Caldos" loading="lazy" />
         <h2>🍲 Caldos</h2>
         <ul>
@@ -71,7 +71,7 @@
           <li>Paila Marina XL <span>$15.000</span></li>
         </ul>
       </article>
-      <article class="carousel-slide">
+      <article class="carousel-slide" role="tabpanel" aria-hidden="true" tabindex="-1">
         <img src="img_5.png" alt="🥘 Chupes" loading="lazy" />
         <h2>🥘 Chupes</h2>
         <ul>
@@ -84,7 +84,7 @@
           <li>Chupe de Pulpo <span>$15.000</span></li>
         </ul>
       </article>
-      <article class="carousel-slide">
+      <article class="carousel-slide" role="tabpanel" aria-hidden="true" tabindex="-1">
         <img src="img_6.png" alt="🥪 Sándwiches" loading="lazy" />
         <h2>🥪 Sándwiches</h2>
         <ul>
@@ -94,7 +94,7 @@
           <li>Sándwich de Merluza con Papas Fritas <span>$6.500</span></li>
         </ul>
       </article>
-      <article class="carousel-slide">
+      <article class="carousel-slide" role="tabpanel" aria-hidden="true" tabindex="-1">
         <img src="img_7.png" alt="🍽️ Pescados, Pollo y Carnes" loading="lazy" />
         <h2>🍽️ Pescados, Pollo y Carnes</h2>
         <ul>
@@ -117,7 +117,7 @@
           <li>N°6 Puré</li>
         </ol>
       </article>
-      <article class="carousel-slide">
+      <article class="carousel-slide" role="tabpanel" aria-hidden="true" tabindex="-1">
         <img src="img_8.png" alt="🍤 Platos Extras" loading="lazy" />
         <h2>🍤 Platos Extras</h2>
         <ul>
@@ -126,7 +126,7 @@
           <li>Chorrillana Marina Mediana <span>$15.000</span></li>
         </ul>
       </article>
-      <article class="carousel-slide">
+      <article class="carousel-slide" role="tabpanel" aria-hidden="true" tabindex="-1">
         <img src="img_9.png" alt="🥗 Porciones" loading="lazy" />
         <h2>🥗 Porciones</h2>
         <ul>
@@ -138,7 +138,7 @@
           <li>Porción a lo Pobre <span>$6.500</span></li>
         </ul>
       </article>
-      <article class="carousel-slide">
+      <article class="carousel-slide" role="tabpanel" aria-hidden="true" tabindex="-1">
         <img src="img_10.png" alt="☕ Bebestibles" loading="lazy" />
         <h2>☕ Bebestibles</h2>
         <ul>
@@ -148,7 +148,7 @@
           <li>Té de Hoja <span>$1.500</span></li>
         </ul>
       </article>
-      <article class="carousel-slide">
+      <article class="carousel-slide" role="tabpanel" aria-hidden="true" tabindex="-1">
         <img src="img_11.png" alt="🥤 Bebidas Analcóholicas" loading="lazy" />
         <h2>🥤 Bebidas Analcóholicas</h2>
         <ul>
@@ -159,7 +159,7 @@
           <li>Limonada <span>$2.500</span></li>
         </ul>
       </article>
-      <article class="carousel-slide">
+      <article class="carousel-slide" role="tabpanel" aria-hidden="true" tabindex="-1">
         <img src="img_12.png" alt="🍻 Bebidas Alcohólicas" loading="lazy" />
         <h2>🍻 Bebidas Alcohólicas</h2>
         <ul>
@@ -197,6 +197,7 @@
         button.type = 'button';
         button.setAttribute('aria-label', `Mostrar imagen ${index + 1}`);
         button.setAttribute('role', 'tab');
+        button.setAttribute('aria-selected', 'false');
         if (index === 0) {
           button.classList.add('active');
           button.setAttribute('aria-selected', 'true');
@@ -213,6 +214,15 @@
         const isActive = index === currentIndex;
         dot.classList.toggle('active', isActive);
         dot.setAttribute('aria-selected', isActive);
+      });
+      slides.forEach((slide, index) => {
+        if (index === currentIndex) {
+          slide.setAttribute('aria-hidden', 'false');
+          slide.setAttribute('tabindex', '0');
+        } else {
+          slide.setAttribute('aria-hidden', 'true');
+          slide.setAttribute('tabindex', '-1');
+        }
       });
     };
 
