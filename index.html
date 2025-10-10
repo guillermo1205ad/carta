@@ -12,7 +12,9 @@
 </head>
 <body>
   <div class="carousel" role="region" aria-label="Menú del Restaurante Mar Azul">
-    <button class="carousel-button prev" aria-label="Imagen anterior">&#10094;</button>
+    <button class="carousel-button prev" aria-label="Imagen anterior">
+      <span>&#10094;</span>
+    </button>
     <div class="carousel-track">
       <article class="carousel-slide" role="tabpanel" aria-hidden="false" tabindex="0">
         <div class="slide-content">
@@ -224,7 +226,9 @@
         </div>
       </article>
     </div>
-    <button class="carousel-button next" aria-label="Imagen siguiente">&#10095;</button>
+    <button class="carousel-button next" aria-label="Imagen siguiente">
+      <span>&#10095;</span>
+    </button>
     <div class="carousel-dots" role="tablist" aria-label="Selector de imágenes"></div>
   </div>
   <script>
@@ -246,8 +250,7 @@
     nextButton.classList.add('visible');
     prevButton.classList.add('visible');
     setTimeout(hideButtons, 2000); // 2 segundos
-    // ----------------------------------------------------
-
+    // --------------------------------------------------------
 
     const createDots = () => {
       dotsNav.innerHTML = '';

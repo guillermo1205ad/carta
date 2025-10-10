@@ -139,47 +139,56 @@ body {
 }
 
 
-/* --- Botones del Carrusel --- */
+/* --- Botones del Carrusel (NUEVA LÓGICA) --- */
 .carousel-button {
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
+  top: 0;
+  width: 50%; /* Ocupa la mitad de la pantalla */
+  height: 100%;
   
-  background: rgba(0, 180, 216, 0.5);
+  background: transparent; /* El área de clic es invisible */
   border: none;
-  color: var(--primary);
-  padding: 1rem;
+  padding: 0 20px; /* Espacio para que el icono no quede pegado al borde */
+  
   cursor: pointer;
-  border-radius: 50%;
   z-index: 10;
-  font-size: 1.5rem;
+  
+  /* Flexbox para posicionar el icono (span) dentro del área */
+  display: flex;
+  align-items: center;
+}
+
+.carousel-button.prev { 
+  left: 0;
+  justify-content: flex-start; /* Alinea el icono a la izquierda */
+}
+
+.carousel-button.next { 
+  right: 0;
+  justify-content: flex-end; /* Alinea el icono a la derecha */
+}
+
+/* El icono (span) es el elemento visual */
+.carousel-button span {
+  background: rgba(0, 180, 216, 0.5);
+  color: var(--primary);
+  border-radius: 50%;
   width: 50px;
   height: 50px;
+  font-size: 1.5rem;
   display: flex;
   justify-content: center;
   align-items: center;
   box-shadow: 0 0 15px rgba(0, 180, 216, 0.5);
-  
+
   opacity: 0; /* INICIALMENTE INVISIBLE */
-  pointer-events: none; /* No interactuable cuando es invisible */
-  transition: opacity 0.5s ease, background 0.3s ease, transform 0.3s ease;
+  transition: opacity 0.5s ease;
 }
 
-/* Estado visible y activo de los botones */
-.carousel-button.visible {
-  opacity: 1; /* Completamente visible */
-  pointer-events: auto; /* Permite interacción */
+/* Clase para hacer visible el icono */
+.carousel-button.visible span {
+  opacity: 1;
 }
-
-.carousel-button:hover {
-  background: var(--primary);
-  color: var(--secondary);
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.7);
-  transform: translateY(-50%) scale(1.1);
-}
-
-.carousel-button.prev { left: 20px; }
-.carousel-button.next { right: 20px; }
 
 
 /* --- Puntos del Carrusel --- */
@@ -234,18 +243,18 @@ body {
   opacity: 1;
 }
 
-/* --- Estilos para el icono de Marraqueta (NUEVO) --- */
+/* --- Estilos para el icono de Marraqueta --- */
 .sandwich-title {
-  display: flex; /* Permite al icono y al texto estar en la misma línea */
-  align-items: center; /* Centra verticalmente el icono con el texto */
-  justify-content: center; /* Centra el contenido horizontalmente */
-  gap: 10px; /* Espacio entre el texto y el icono */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
 }
 
 .marraqueta-icon {
-  width: 50px; /* Ajusta el tamaño según sea necesario */
+  width: 50px;
   height: auto;
-  vertical-align: middle; /* Alinea con el texto */
+  vertical-align: middle;
 }
 
 
@@ -256,18 +265,19 @@ body {
     max-height: 85vh;
   }
   .carousel-button {
+    padding: 0 10px;
+  }
+  .carousel-button span {
     width: 40px;
     height: 40px;
     font-size: 1.2rem;
   }
-  .carousel-button.prev { left: 10px; }
-  .carousel-button.next { right: 10px; }
 
   .social-icons img {
     width: 35px;
     height: 35px;
   }
   .marraqueta-icon {
-    width: 40px; /* Ajusta el tamaño para móviles */
+    width: 40px;
   }
 }
